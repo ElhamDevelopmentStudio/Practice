@@ -8,6 +8,7 @@ import FontWeight from "../Typography/FontWeight";
 import FontFamily from "../Typography/FontFamily";
 import LineAndLetterSpacing from "../Typography/LineAndLetterSpacing";
 import TextAlignment from "../Typography/TextAlignment";
+import RelativePositioning from "../Positioning/RelativePositioning";
 
 const Basics = () => {
   return (
@@ -78,6 +79,13 @@ const Basics = () => {
             Text Alignment
           </h1>
           <TextAlignment />
+        </div>
+
+        <div>
+          <h1 className="text-3xl  text-left text-black my-10">
+            Relative Positioning
+          </h1>
+          <RelativePositioning />
         </div>
       </div>
     </div>

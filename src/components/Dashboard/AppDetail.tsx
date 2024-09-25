@@ -1,30 +1,18 @@
-import { Bell, MessageCircle, Search, Settings, Star, X } from "lucide-react";
+import {
+  Bell,
+  HelpCircle,
+  LogOut,
+  MessageCircle,
+  Search,
+  Settings,
+  Star,
+  User,
+} from "lucide-react";
 
 export default function AppDetail() {
   return (
     <div className="flex flex-col h-screen bg-white">
       {/* Header */}
-      <header className="flex items-center justify-between px-4 py-2 border-b">
-        <div className="flex items-center space-x-4">
-          <button className="relative">
-            <Bell className="w-6 h-6 text-gray-500" />
-            <span className="absolute top-0 right-0 w-4 h-4 bg-red-500 rounded-full text-xs text-white flex items-center justify-center">
-              3
-            </span>
-          </button>
-          <button className="relative">
-            <MessageCircle className="w-6 h-6 text-gray-500" />
-            <span className="absolute top-0 right-0 w-4 h-4 bg-red-500 rounded-full text-xs text-white flex items-center justify-center">
-              25
-            </span>
-          </button>
-          <button>
-            <X className="w-6 h-6 text-gray-500" />
-          </button>
-          <span className="text-gray-700">Demo Company</span>
-          <div className="w-8 h-8 bg-gray-300 rounded-full"></div>
-        </div>
-      </header>
 
       {/* Main content */}
       <div className="flex flex-1 overflow-hidden">
