@@ -1,14 +1,14 @@
 import {
     Users,
     Settings,
-    LayoutGrid,
     LucideIcon,
     User,
     Newspaper,
     Building2,
     PieChart,
     Mail,
-    Lock
+    Lock,
+    LayoutDashboard
   } from "lucide-react";
   
   type MenuItem = {
@@ -29,7 +29,7 @@ import {
         href: "/dashboard",
         label: "Dashboard",
         active: pathname.includes("/dashboard"),
-        icon: LayoutGrid,
+        icon: LayoutDashboard,
       },
       {
         href: "",
