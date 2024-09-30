@@ -19,6 +19,7 @@ import { ThemeProvider } from './components/ThemeProvider';
 import AdminPanel from './components/Sidebar/AdminPanel';
 import { DateRangePicker } from './components/DatePicker/DateRangePicker';
 import Login from './components/Login/pages/Login';
+import Navbar from "./components/Navbar/navbar";
 
 function App() {
   const router = createBrowserRouter([
@@ -88,15 +89,21 @@ function App() {
       element: <AdminPanel />,
     },
     {
+      path: "/navbar",
+      element: <Navbar userName="Fatma Basir" userImage="/logo.svg" />,
+    },
+    {
       path: "/dateRangePicker",
-      element: <DateRangePicker
-        onUpdate={(values) => console.log(values)}
-        initialDateFrom="2023-01-01"
-        initialDateTo="2023-12-31"
-        align="start"
-        locale="en-GB"
-        showCompare={false}
-      />,
+      element: (
+        <DateRangePicker
+          onUpdate={(values) => console.log(values)}
+          initialDateFrom="2023-01-01"
+          initialDateTo="2023-12-31"
+          align="start"
+          locale="en-GB"
+          showCompare={false}
+        />
+      ),
     },
     {
       path: "/login",
