@@ -16,6 +16,9 @@ import Logger from './components/zustand/components/Logger';
 import UserAxios from './components/zustand/components/UserAxios';
 import UsersSWR from './components/zustand/components/UsersSWR';
 import { Sidebar } from './components/Sidebar/Sidebar';
+import { ThemeProvider } from './components/ThemeProvider';
+import AdminPanel from './components/Sidebar/AdminPanel';
+import { DateRangePicker } from './components/DatePicker/DateRangePicker';
 
 function App() {
   const router = createBrowserRouter([
@@ -82,15 +85,28 @@ function App() {
     },
     {
       path: "/sidebar",
-      element: <Sidebar />,
+      element: <AdminPanel />,
+    },
+    {
+      path: "/dateRangePicker",
+      element: <DateRangePicker
+        onUpdate={(values) => console.log(values)}
+        initialDateFrom="2023-01-01"
+        initialDateTo="2023-12-31"
+        align="start"
+        locale="en-GB"
+        showCompare={false}
+      />,
     },
   ]);
 
   return (
     <>
-      <ReduxProvider store={store}>
-        <RouterProvider router={router} />
-      </ReduxProvider>
+      <ThemeProvider>
+        <ReduxProvider store={store}>
+          <RouterProvider router={router} />
+        </ReduxProvider>
+      </ThemeProvider>
     </>
   );
 }

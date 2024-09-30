@@ -7,7 +7,7 @@ import { useSidebarToggle } from "./_components/hooks/useSidebarToggle";
 import { SidebarToggle } from "./_components/SidebarToggle";
 import { Link } from "react-router-dom";
 import { Menu } from "./_components/Menu";
-import { useStore } from "./_components/hooks/useStore";
+import { useStore } from "./_components/hooks/useSidebarStore";
 
 
 export function Sidebar() {
