@@ -11,6 +11,11 @@ import DependantRequest from './components/SWR/components/DependantRequest';
 import { RetryComponent } from './components/SWR/components/RetryComponent';
 import UserList from './components/zustand/components/counter/UserList';
 import Counter from './components/zustand/components/counter/Counter';
+import Temprature from './components/zustand/components/Temprature';
+import Logger from './components/zustand/components/Logger';
+import UserAxios from './components/zustand/components/UserAxios';
+import UsersSWR from './components/zustand/components/UsersSWR';
+import { Sidebar } from './components/Sidebar/Sidebar';
 
 function App() {
   const router = createBrowserRouter([
@@ -58,6 +63,26 @@ function App() {
     {
       path: "/zustand/userList",
       element: <UserList />,
+    },
+    {
+      path: "/zustand/temprature",
+      element: <Temprature />,
+    },
+    {
+      path: "/zustand/logger",
+      element: <Logger />,
+    },
+    {
+      path: "/zustand/userAxios",
+      element: <UserAxios />,
+    },
+    {
+      path: "/zustand/usersSWR",
+      element: <UsersSWR />,
+    },
+    {
+      path: "/sidebar",
+      element: <Sidebar />,
     },
   ]);
 
