@@ -15,10 +15,10 @@ import Temprature from './components/zustand/components/Temprature';
 import Logger from './components/zustand/components/Logger';
 import UserAxios from './components/zustand/components/UserAxios';
 import UsersSWR from './components/zustand/components/UsersSWR';
-import { Sidebar } from './components/Sidebar/Sidebar';
 import { ThemeProvider } from './components/ThemeProvider';
 import AdminPanel from './components/Sidebar/AdminPanel';
 import { DateRangePicker } from './components/DatePicker/DateRangePicker';
+import Login from './components/Login/pages/Login';
 
 function App() {
   const router = createBrowserRouter([
@@ -97,6 +97,10 @@ function App() {
         locale="en-GB"
         showCompare={false}
       />,
+    },
+    {
+      path: "/login",
+      element: <Login />,
     },
   ]);
 
