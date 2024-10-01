@@ -4,7 +4,6 @@ import { SidebarToggle } from "./_components/SidebarToggle";
 import { Menu } from "./_components/Menu";
 import { useStore } from "./_components/hooks/useSidebarStore";
 import { Separator } from "../ui/separator";
-import { UserItem } from "./_components/UserItem";
 
 
 export function Sidebar() {
@@ -21,7 +20,8 @@ export function Sidebar() {
     >
       <SidebarToggle isOpen={sidebar?.isOpen} setIsOpen={sidebar?.setIsOpen} />
       <div className="relative h-full flex flex-col  overflow-y-auto shadow-md dark:shadow-zinc-800">
-        <UserItem isOpen={sidebar?.isOpen} />
+        {/* <UserItem isOpen={sidebar?.isOpen} /> */}
+        <div className={cn(`text-lg font-extrabold tracking-tighter mt-2`, sidebar?.isOpen ? 'text-left ml-1' : 'text-center')}>UNW</div>
         <Separator className="w-full mt-2"  />
         <Menu isOpen={sidebar?.isOpen} />
       </div>

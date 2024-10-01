@@ -37,14 +37,21 @@ export function Menu({ isOpen }: MenuProps) {
                       <TooltipTrigger asChild>
                         <Button
                           variant={menuItem.active ? "secondary" : "ghost"}
-                          className="w-full justify-start h-10 mb-1"
+                          className={cn(
+                            "w-full justify-start h-10 mb-1",
+                            menuItem.active && "bg-iconBg dark:bg-iconBgDark"
+                          )}
                           asChild
                         >
                           <Link to={menuItem.href}> 
                             <span
                               className={cn(isOpen === false ? "" : "mr-4")}
                             >
-                              <menuItem.icon size={18} />
+                              {menuItem.active ? (
+                                <menuItem.icon size={18} fill="currentColor" />
+                              ) : (
+                                <menuItem.icon size={18} />
+                              )}
                             </span>
                             <p
                               className={cn(
@@ -58,9 +65,9 @@ export function Menu({ isOpen }: MenuProps) {
                             </p>
                           </Link>
                         </Button>
-                      </TooltipTrigger>
+                      </TooltipTrigger> 
                       {isOpen === false && (
-                        <TooltipContent side="right">
+                        <TooltipContent side="right" className="bg-gray-200 text-black dark:bg-gray-800 dark:text-white">
                           {menuItem.label}
                         </TooltipContent>
                       )}
