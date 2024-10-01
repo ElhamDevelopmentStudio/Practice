@@ -44,6 +44,14 @@ export default {
 					DEFAULT: '#1A9FD7',
 					foreground: 'hsl(var(--blue-foreground))'
 				},
+				iconBg: {
+					DEFAULT: '#F1F5F9',
+					foreground: 'hsl(var(--iconBg-foreground))'
+				},
+				iconBgDark: {
+					DEFAULT: '#1E293B',
+					foreground: 'hsl(var(--iconBgDark-foreground))'
+				},
   			muted: {
   				DEFAULT: 'hsl(var(--muted))',
   				foreground: 'hsl(var(--muted-foreground))'

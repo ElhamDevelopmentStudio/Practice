@@ -26,9 +26,9 @@ import {
   export function getMenuList(pathname: string): MenuItem[] {
     return [
       {
-        href: "/dashboard",
+        href: "#",
         label: "Dashboard",
-        active: pathname.includes("/dashboard"),
+        active: pathname.includes(""),
         icon: LayoutDashboard,
       },
       {
