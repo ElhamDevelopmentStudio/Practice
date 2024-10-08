@@ -20,6 +20,10 @@ import AdminPanel from './components/Sidebar/AdminPanel';
 import { DateRangePicker } from './components/DatePicker/DateRangePicker';
 import Login from './components/Login/pages/Login';
 import Navbar from "./components/Navbar/navbar";
+import MembersList from "./components/Sidebar/_components/data-table/MembersList";
+import { AdminSettingsPage } from "./pages/admins-settings";
+import PermissionsManager from "./pages/admin-setting";
+import OrganizationProfile from "./pages/organization-list";
 
 function App() {
   const router = createBrowserRouter([
@@ -109,11 +113,27 @@ function App() {
       path: "/login",
       element: <Login />,
     },
+    {
+      path: "/data",
+      element: <MembersList />,
+    },
+    {
+      path: "/admin-settings",
+      element: <AdminSettingsPage />,
+    },
+    {
+      path: "/admin-setting",
+      element: <PermissionsManager />,
+    },
+    {
+      path: "/org-profile",
+      element: <OrganizationProfile />,
+    },
   ]);
 
   return (
     <>
-      <ThemeProvider>
+      <ThemeProvider defaultTheme="light">
         <ReduxProvider store={store}>
           <RouterProvider router={router} />
         </ReduxProvider>
