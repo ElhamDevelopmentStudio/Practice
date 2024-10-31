@@ -24,8 +24,79 @@ import MembersList from "./components/Sidebar/_components/data-table/MembersList
 import { AdminSettingsPage } from "./pages/admins-settings";
 import PermissionsManager from "./pages/admin-setting";
 import OrganizationProfile from "./pages/organization-list";
+import { Overview } from "./pages/organization-overview";
 
 function App() {
+  const dashboardData = {
+    user: {
+      name: "Abdul Monir arab",
+      avatar: "/path/to/avatar.jpg",
+    },
+    cases: {
+      Active: 89,
+      Referred: 39,
+      Received: 14,
+      Completed: 32,
+    },
+    divisions: [
+      { name: "AWEC Mazar", members: 10, additional: 5 },
+      { name: "AWEC Qandhar", members: 6, additional: 5 },
+      { name: "AWEC Parwan", members: 12, additional: 5 },
+    ],
+    logs: [
+      {
+        name: "Laila Durrani",
+        avatar: "/path/to/avatar1.jpg",
+        action: "Case referred to International Medical Corps",
+        time: "2 mins ago",
+      },
+      {
+        name: "Ahmad Farid",
+        avatar: "/path/to/avatar2.jpg",
+        action: "Created new case about Sexual Violence",
+        time: "2 days ago",
+      },
+      {
+        name: "Zahra Ahmadi",
+        avatar: "/path/to/avatar3.jpg",
+        action: "Added a file to Domestic Violence Incident",
+        time: "1 week ago",
+      },
+    ],
+    members: [
+      {
+        name: "Ahmad Farid",
+        email: "farid.ahmad@gmail.com",
+        avatar: "/path/to/avatar4.jpg",
+        position: "Legal Advisor",
+        contactNumber: "+93 723556031",
+        role: "Case Worker",
+        lastActivity: "3 hours ago",
+        status: "Active",
+      },
+      {
+        name: "Laila Durrani",
+        email: "laila.durani@gmail.com",
+        avatar: "/path/to/avatar5.jpg",
+        position: "Health Program Officer",
+        contactNumber: "+93 773272352",
+        role: "Practitioner",
+        lastActivity: "3 hours ago",
+        status: "In Review",
+      },
+      {
+        name: "Zahra Ahmadi",
+        email: "zahra.ahmadi@gmail.com",
+        avatar: "/path/to/avatar6.jpg",
+        position: "Child Protection Officer",
+        contactNumber: "+93 772134021",
+        role: "Case Manager",
+        lastActivity: "3 hours ago",
+        status: "Suspend",
+      },
+    ],
+  };
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -128,6 +199,10 @@ function App() {
     {
       path: "/org-profile",
       element: <OrganizationProfile />,
+    },
+    {
+      path: "/org-overview",
+      element: <Overview user={dashboardData.user} activityLogs={dashboardData.logs} casesOverview={dashboardData.cases} />,
     },
   ]);
 
